@@ -128,6 +128,8 @@ def process_history(fullhistoryfilepath):
                 created = None
             # clear the element object and free the memory
             elem.clear()
+            while elem.getprevious() is not None:
+               del elem.getparent()[0]
             type = None
             action = None
     # print stat
